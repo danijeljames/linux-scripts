@@ -19,6 +19,9 @@ dpkg-reconfigure locales
 apt-get -y update
 apt-get -y dist-upgrade
 
+# Install Nano
+apt-get -y install nano
+
 # Install Git
 apt-get -y install git
 
