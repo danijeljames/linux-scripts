@@ -1,14 +1,24 @@
 #!/bin/bash
+
+# Start by updating and upgrading
 apt-get update
 apt-get dist-upgrade
+
+# Install Git
+apt-get -y install git
+
+# Install cURL
+apt-get -y install curl
+
+# Change to temp directory for downloads
 cd /tmp
 
 # Install Key for Webmin
-wget http://www.webmin.com/jcameron-key.asc
+curl -O http://www.webmin.com/jcameron-key.asc
 apt-key add jcameron-key.asc
 
 # Install Key for Nginx
-wget http://nginx.org/keys/nginx_signing.key
+curl -O http://nginx.org/keys/nginx_signing.key
 apt-key add nginx_signing.key
 
 # Add Nginx to sources list
@@ -25,9 +35,29 @@ apt-get -y install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-run
 # Git Dependancies
 apt-get -y install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
 
+# Download and install Git
+git clone git://git.kernel.org/pub/scm/git/git.git
+cd git
+make prefix=/usr/local all
+make prefix=/usr/local install
 
-apt-get install build-essential git-core wget curl gcc checkinstall libxml2-dev libxslt-dev sqlite3 libsqlite3-dev libcurl4-openssl-dev libreadline-dev libc6-dev libssl-dev libmysql++-dev make build-essential zlib1g-dev libicu-dev redis-server openssh-server python-dev python-pip libyaml-dev
+# Install RVM
+apt-get remove ruby ruby1.8
+apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion locales-all python libxml2
+curl -L https://get.rvm.io | bash -s stable --rails
+source ~/.rvm/scripts/rvm
+
+# List all Ruby versions
+rvm list known
+echo "Type Ruby version to install from list: "
+read -p $instRubyVers
+rvm install $instRubyVers
+rvm use $instRubyVers
+
+# Download the website source
+git clone git@github.com:danijelj.com.git
+cd danijelj.com
+sh gen.sh
 
 
 
-apt-get install git
