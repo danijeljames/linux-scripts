@@ -8,6 +8,13 @@ chmod 644 ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_dsa
 chmod 644 ~/.ssh/id_dsa.pub
 
+# Fix the Locales to prevent issues
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+locale-gen en_US.UTF-8
+dpkg-reconfigure locales
+
 # Start by updating and upgrading
 apt-get -y update
 apt-get -y dist-upgrade
