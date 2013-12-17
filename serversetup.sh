@@ -69,6 +69,12 @@ read -p $instRubyVers
 rvm install $instRubyVers
 rvm use $instRubyVers
 
+# Install Webmin
+apt-get -y install webmin
+
+# Install Nginx
+apt-get -y install nginx
+
 # Download the website source
 git clone git@github.com:danijelj.com.git
 cd danijelj.com
