@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Set permissions on SSH keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/id_dsa
+chmod 644 ~/.ssh/id_dsa.pub
+
 # Start by updating and upgrading
 apt-get update
 apt-get dist-upgrade
