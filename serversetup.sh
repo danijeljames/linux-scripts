@@ -60,7 +60,8 @@ make prefix=/usr/local install
 apt-get remove ruby ruby1.8
 apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion locales-all python libxml2
 curl -L https://get.rvm.io | bash -s stable --rails
-source ~/.rvm/scripts/rvm
+#source ~/.rvm/scripts/rvm
+source /usr/local/rvm/scripts/rvm
 
 # List all Ruby versions
 rvm list known
