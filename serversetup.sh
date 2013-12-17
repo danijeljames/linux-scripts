@@ -65,10 +65,12 @@ source /usr/local/rvm/scripts/rvm
 
 # List all Ruby versions
 rvm list known
-echo "Type Ruby version to install from list: "
-read -p $instRubyVers
-rvm install $instRubyVers
-rvm use $instRubyVers
+#echo "Type Ruby version to install from list: "
+#read -p $instRubyVers
+#rvm install $instRubyVers
+rvm install 2.0.0p353
+#rvm use $instRubyVers
+rvm use 2.0.0p353
 
 # Install Webmin
 apt-get -y install webmin
