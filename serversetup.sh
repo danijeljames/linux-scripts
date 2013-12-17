@@ -9,8 +9,8 @@ chmod 600 ~/.ssh/id_dsa
 chmod 644 ~/.ssh/id_dsa.pub
 
 # Start by updating and upgrading
-apt-get update
-apt-get dist-upgrade
+apt-get -y update
+apt-get -y dist-upgrade
 
 # Install Git
 apt-get -y install git
