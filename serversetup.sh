@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Set language defaults
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Set permissions on SSH keys
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
@@ -71,9 +76,9 @@ rvm list known
 #echo "Type Ruby version to install from list: "
 #read -p $instRubyVers
 #rvm install $instRubyVers
-rvm install 2.0.0p353
+#rvm install 2.0.0p353
 #rvm use $instRubyVers
-rvm use 2.0.0p353
+#rvm use 2.0.0p353
 
 # Install Webmin
 apt-get -y install webmin
@@ -81,10 +86,25 @@ apt-get -y install webmin
 # Install Nginx
 apt-get -y install nginx
 
+# Change to root directory
+cd /home/root
+
 # Download the website source
 git clone git@github.com:danijelj.com.git
 cd danijelj.com
-sh gen.sh
 
+# Install Ruby dependancies
+gem install rdoc
+gem rdoc --all --overwrite
+gem install RedCloth
+gem install bundler
+bundle install
 
-
+# Complete message
+echo **********************************************
+echo *                                            *
+echo *                                            *
+echo *                                            *
+echo *                                            *
+echo *                                            *
+echo **********************************************
