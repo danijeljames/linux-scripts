@@ -5,6 +5,11 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Add SSH keys to server
+if [ ! -d "~/.ssh" ]; then
+  mkdir ~/.ssh
+fi
+
 # Set permissions on SSH keys
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
