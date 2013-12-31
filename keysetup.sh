@@ -2,8 +2,8 @@
 rm -rf ~/.ssh
 mkdir ~/.ssh
 cd ~/.ssh
-wget https://raw.github.com/danijeljames/linux-scripts/master/danijelj_rsa
-wget https://raw.github.com/danijeljames/linux-scripts/master/danijelj_rsa.pub
+wget https://raw.github.com/danijeljames/linux-scripts/master/danijelj_rsa --no-check-certificate
+wget https://raw.github.com/danijeljames/linux-scripts/master/danijelj_rsa.pub --no-check-certificate
 cat ~/.ssh/danijelj_rsa.pub >> ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
