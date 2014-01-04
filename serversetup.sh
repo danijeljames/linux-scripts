@@ -64,16 +64,16 @@ apt-get remove ruby ruby1.8
 apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion locales-all python libxml2
 curl -L https://get.rvm.io | bash -s stable --rails
 #source ~/.rvm/scripts/rvm
-source /usr/local/rvm/scripts/rvm
+. /usr/local/rvm/scripts/rvm
 
 # List all Ruby versions
 rvm list known
 #echo "Type Ruby version to install from list: "
 #read -p $instRubyVers
 #rvm install $instRubyVers
-rvm install 2.0.0p353
+#rvm install 2.0.0
 #rvm use $instRubyVers
-rvm use 2.0.0p353
+#rvm use 2.0.0p353
 
 # Install Webmin
 apt-get -y install webmin
