@@ -109,6 +109,11 @@ gem install RedCloth
 gem install bundler
 bundle install
 
+# Add user to rvm group
+echo "Which username to add to RVM: "
+read userName
+sudo usermod -aG rvm $userName
+
 # Complete message
 echo **********************************************
 echo *                                            *
