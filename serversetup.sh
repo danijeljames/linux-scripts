@@ -120,5 +120,7 @@ echo *                                            *
 echo *                                            *
 echo *              COMPLETED!!!                  *
 echo *                                            *
+echo *      source /etc/profile.d/rvm.sh          *
+echo *    source /usr/local/rvm/scripts/rvm       *
 echo *                                            *
 echo **********************************************
