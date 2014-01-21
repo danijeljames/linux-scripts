@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Set language defaults
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+# export LANGUAGE=en_US.UTF-8
+# export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 
 # Add SSH keys to server
 if [ ! -d "~/.ssh" ]; then
@@ -19,11 +19,11 @@ chmod 600 ~/.ssh/id_dsa
 chmod 644 ~/.ssh/id_dsa.pub
 
 # Fix the Locales to prevent issues
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
-dpkg-reconfigure locales
+# export LANGUAGE=en_US.UTF-8
+# export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+# locale-gen en_US.UTF-8
+# dpkg-reconfigure locales
 
 # Start by updating and upgrading
 apt-get -y update
@@ -81,11 +81,11 @@ rvm list known
 #echo "Type Ruby version to install from list: "
 #read -p $instRubyVers
 #rvm install $instRubyVers
-<<<<<<< HEAD
+
 #rvm install 2.0.0
-=======
+
 #rvm install 2.0.0p353
->>>>>>> 88a903c49b6ffd072ab2b335be3ea8f02caa9950
+
 #rvm use $instRubyVers
 #rvm use 2.0.0p353
 
@@ -96,7 +96,7 @@ apt-get -y install webmin
 apt-get -y install nginx
 
 # Change to root directory
-cd /home/root
+cd /home/danijel
 
 # Download the website source
 git clone git@github.com:danijelj.com.git
@@ -111,8 +111,8 @@ bundle install
 
 # Add user to rvm group
 echo "Which username to add to RVM: "
-read userName
-sudo usermod -aG rvm $userName
+echo "read userName"
+echo "sudo usermod -aG rvm $userName"
 
 # Complete message
 echo **********************************************
