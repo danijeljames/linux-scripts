@@ -74,10 +74,10 @@ apt-get remove ruby ruby1.8
 apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion locales-all python libxml2
 curl -L https://get.rvm.io | bash -s stable --rails
 #source ~/.rvm/scripts/rvm
-. /usr/local/rvm/scripts/rvm
+echo ". /usr/local/rvm/scripts/rvm"
 
 # List all Ruby versions
-rvm list known
+echo "rvm list known"
 #echo "Type Ruby version to install from list: "
 #read -p $instRubyVers
 #rvm install $instRubyVers
@@ -100,14 +100,20 @@ cd /home/danijel
 
 # Download the website source
 git clone git@github.com:danijelj.com.git
-cd danijelj.com
+#cd danijelj.com
+
+# Source the script
+echo ". /usr/local/rvm/scripts/rvm"
+
+# List known Ruby versions
+echo "rvm list known"
 
 # Install Ruby dependancies
-gem install rdoc
-gem rdoc --all --overwrite
-gem install RedCloth
-gem install bundler
-bundle install
+echo "gem install rdoc"
+echo "gem rdoc --all --overwrite"
+echo "gem install RedCloth"
+echo "gem install bundler"
+echo "bundle install"
 
 # Add user to rvm group
 echo "Which username to add to RVM: "
