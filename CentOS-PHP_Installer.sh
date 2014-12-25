@@ -5,6 +5,7 @@
 #############
 RELEASEVER=$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))
 todaysDateUS="$(date +'%Y%m%d')"
+KernelVers="uname -m"
 
 #############
 ## Terminal Colours
@@ -37,3 +38,23 @@ else
 fi
 yum -y install php56w php56w-opcache
 yum -y install php56w-opcache
+
+#############
+## Install ionCube
+#############
+#if [ "KernelVers" = "x86_64"]; then
+#  echo ""
+#  echo "64-bit Kernel detected on your system,"
+#  echo "type the full URL to .tar.gz for ionCube"
+#  echo "followed by [ENTER]:"
+#  read ionCubeURL
+#  wget "$ionCubeURL"
+#  giddy="$(ls *.tar.gz)"
+#  tar xvfz $giddy
+#fi
+#if [ "KernelVers" = "i686"]; then
+#  echo ""
+#  echo "64-bit Kernel detected on your system,"
+#  echo "type the full URL to .tar.gz for ionCube"
+#  echo "followed by [ENTER]:"
+#fi
